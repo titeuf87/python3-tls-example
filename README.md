@@ -16,3 +16,10 @@ The server requires the client to provide a certificate and once connected this 
 
 `client.py`
 Example of a client that both checks that the server certificate is valid and that provides a certificate to the server for authentication.
+
+
+check_hostname
+==============
+The client explicitly sets `check_hostname` to `False`. When deploying this it's a good idea to enable this so that the client checks the hostname is valid with the server certificate.
+
+For this the server certificate needs to be changed to include the actual hostname (either in the CN or as an alternative name). When the client connects it will check this and abort should the hostname not match.

@@ -4,7 +4,7 @@ import ssl
 @asyncio.coroutine
 def connect():
     sslcontext = ssl.create_default_context(purpose=ssl.Purpose.SERVER_AUTH)
-    sslcontext.check_hostname = False
+    #sslcontext.check_hostname = False
     sslcontext.load_verify_locations("root.pem")
     sslcontext.load_cert_chain(certfile="client.crt", keyfile="client.key")
 
